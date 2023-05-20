@@ -16,7 +16,7 @@ const boxes = document.querySelectorAll('.box');
 
 boxes.forEach((box) => {
   box.addEventListener('mouseover', () => {
-    box.className = "black-box";
+    box.style.backgroundColor = "black";
   });
 });
 
