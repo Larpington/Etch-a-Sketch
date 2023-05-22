@@ -23,6 +23,13 @@ boxes.forEach((box) => {
 
 function changeGridSize(){
     let numberOfBoxes = prompt("How many boxes would you like per row? (100 max)")
+    if (numberOfBoxes > 100) {
+        const errorMessage = document.querySelector(".error-box")
+        errorMessage.textContent = "The maximum row size is 100, please try again."
+    } else if (isNaN(numberOfBoxes)) {
+        const errorMessage = document.querySelector(".error-box")
+        errorMessage.textContent = "Please only input a number, up to 100."
+    }
 }
 
 
