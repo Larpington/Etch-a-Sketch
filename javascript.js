@@ -41,10 +41,18 @@ function changeGridSize(){
             row.remove();
         });
         createBoxes(numberOfBoxes);
-        boxes.forEach(changeBoxColor());
+        boxes.forEach(changeBoxColor);
+        changeBoxSize(numberOfBoxes);
     }
 }
 
+function changeBoxSize(numberOfBoxes) {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach((box) => {
+      box.style.width = `calc(700px / ${numberOfBoxes})`;
+      box.style.height = `calc(700px / ${numberOfBoxes})`;
+    });
+}
 createBoxes(16);
 changeBoxColor();
 
