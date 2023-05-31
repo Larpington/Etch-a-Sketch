@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 
-// creates a grid of 16x16 boxes
-let numberOfBoxes = 16;
+
+function createBoxes(numberOfBoxes){
 for (let i = 0; i < numberOfBoxes; i++) {
     const row = document.createElement('div');
     container.appendChild(row);
@@ -10,17 +10,19 @@ for (let i = 0; i < numberOfBoxes; i++) {
         const box = document.createElement('div');
         row.appendChild(box);
         box.className = "box";
-}
+        }
+    }
 }
 
-// event listener that changes the color of the boxes on mouseover
-const boxes = document.querySelectorAll('.box');
-boxes.forEach((box) => {
-  box.addEventListener('mouseover', () => {
-    box.style.backgroundColor = "black";
-  });
-});
-
+function changeBoxColor() {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach((box) => {
+      box.addEventListener('mouseover', () => {
+        box.style.backgroundColor = "black";
+      });
+    });
+}
+// function that adds event listener that changes the color of the boxes on mouseover
 function changeGridSize(){
     let numberOfBoxes = prompt("How many boxes would you like per row? (100 max)");
     if (numberOfBoxes > 100) {
@@ -38,19 +40,12 @@ function changeGridSize(){
         rows.forEach(row => {
             row.remove();
         });
-        for (let i = 0; i < numberOfBoxes; i++) {
-            const row = document.createElement('div');
-            container.appendChild(row);
-            row.className = "row";
-            for (let i = 0; i < numberOfBoxes; i++) {
-                const box = document.createElement('div');
-                row.appendChild(box);
-                box.className = "box";
-        }
-        }
+        createBoxes(numberOfBoxes);
+        boxes.forEach(changeBoxColor());
     }
-
 }
 
+createBoxes(16);
+changeBoxColor();
 
 
