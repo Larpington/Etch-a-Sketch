@@ -1,6 +1,5 @@
 const container = document.querySelector(".container");
 
-
 function createBoxes(numberOfBoxes){
 for (let i = 0; i < numberOfBoxes; i++) {
     const row = document.createElement('div');

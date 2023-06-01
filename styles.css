@@ -4,8 +4,6 @@
     height: 700px;
 }
 
-
-
 .box {
     height: calc(700px / 16);
     width: calc(700px / 16);
@@ -14,3 +12,13 @@
     border-width: 1px;
 }
 
+.ui-button {
+    border-radius: 25px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.ui-box {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
